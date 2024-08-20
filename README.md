@@ -1,70 +1,57 @@
-# Getting Started with Create React App
+[Link to codecademy lesson](https://www.codecademy.com/courses/react-101/lessons/react-style/exercises/inline-styles-and-style-object-variables)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+### React Styles
+**Inline Styles and Style Object Variables**
 
-In the project directory, you can run:
 
-### `npm start`
+There are many different ways to use styles in React. This exercise is focused on two of them: inline styles and style object variables.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+An inline style is a style that’s written as an attribute, like this:
+```
+<h1 style={{ color: 'red' }}>Hello world</h1>
+```
+Notice that it has double curly braces. The outer curly braces are to note that everything between should be read as JavaScript. The inner curly braces create a JavaScript object literal.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+However, using inline styles can quickly become messy if you want to apply more than just a few styles. An alternative is to store a style object in a variable and then inject that variable as the value of the style attribute.
 
-### `npm test`
+To do this, we can initialize an object with properties and values like so:
+```
+const darkMode = {
+  color: 'white',
+  background: 'black'
+};
+```
+Then, the object can be injected to style a component:
+```
+<h1 style={darkMode}>Hello world</h1>
+```
+Instructions
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Checkpoint 1 Passed
 
-### `npm run build`
+1.    Let’s practice styling components using both inline styles and style object variables.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Open StyleDemo.js. Starting with inline styling, style the first <h1> element inside the StyleDemo component.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Give the <h1> element an attribute with the name of style. The attribute’s value should evaluate to this object:
+```
+{ background: 'lightgreen', color: 'darkgreen' }
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Remember to surround the JavaScript object containing CSS styles with another pair of curly braces.
 
-### `npm run eject`
+2. Next, let’s style using a style object variable.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+On a new line, declare a new constant named myStyle. Set myStyle equal to this object:
+```
+{
+  background: 'lightblue',
+  color: 'darkblue'
+}
+```
+Here’s an example of a JavaScript object called animal:
+```
+const animal = { name: "Black Bear", species: "Ursus Americanus" };
+```
+Style the second <h1> element by giving it an attribute with the name of style. The attribute’s value should be myStyle.
